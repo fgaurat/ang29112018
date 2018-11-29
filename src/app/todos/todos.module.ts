@@ -6,7 +6,7 @@ import { TodosMainComponent } from './todos-main/todos-main.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTableModule,MatCheckboxModule,MatButtonModule} from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [TodosMainComponent, TodosListComponent, TodosFormComponent],
@@ -17,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatTableModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   exports:[TodosMainComponent]
 })

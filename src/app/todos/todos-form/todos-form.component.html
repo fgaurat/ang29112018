@@ -1,8 +1,15 @@
-
-
-<form>
-  <input type="text" [(ngModel)]="todo.action" name="action">
-  <input type="submit" value="ok">
+<form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+  <label>
+    Action
+    <input type="text" name="action" formControlName="action">
+  </label>
+  <label>
+    dueDate
+    <input type="date" name="dueDate" formControlName="dueDate">
+  </label>
+  <label>
+    done
+    <input type="checkbox" name="done" formControlName="done">
+  </label>
+  <input type="submit" value="Submit">
 </form>
-
-{{todo.action}}
