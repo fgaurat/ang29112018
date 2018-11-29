@@ -1,0 +1,59 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>action</th>
+      <th>dueDate</th>
+      <th>done</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos$ | async">
+      <td>{{todo.id}}</td>
+      <td>{{todo.action}}</td>
+      <td>{{todo.dueDate}}</td>
+      <td>{{todo.done}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<hr>
+
+<div>
+  <table mat-table [dataSource]="todos$">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>#</th>
+      <td mat-cell *matCellDef="let value">{{value.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>action</th>
+      <td mat-cell *matCellDef="let value">{{value.action}}</td>
+    </ng-container>
+    <ng-container matColumnDef="dueDate">
+      <th mat-header-cell *matHeaderCellDef>dueDate</th>
+      <td mat-cell *matCellDef="let value">{{value.dueDate | date}}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="done">
+      <th mat-header-cell *matHeaderCellDef>done</th>
+      <td mat-cell *matCellDef="let value">
+        <mat-checkbox [(ngModel)]="value.done" (change)="setDone(value)" ></mat-checkbox>
+        {{value.done}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+        <th mat-header-cell *matHeaderCellDef>_</th>
+        <td mat-cell *matCellDef="let value">
+            <button mat-raised-button color="warn" (click)="doDelete(value)">Delete</button>
+        </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let todo; columns: displayedColumns;"></tr>
+  </table>
+</div>

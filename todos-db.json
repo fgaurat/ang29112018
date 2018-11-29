@@ -1,0 +1,30 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "action": "todo 1",
+      "done": false,
+      "dueDate": 1543412532000
+    },
+    {
+      "id": 2,
+      "action": "todo 1",
+      "done": false,
+      "dueDate": 1543412532000
+    },
+    {
+      "id": 3,
+      "action": "todo 1",
+      "done": false,
+      "dueDate": 1543412532000
+    },
+    {
+      "id": 4,
+      "action": "todo 1",
+      "done": false,
+      "dueDate": 1543412532000
+    }
+  ]
+}
+
+localhost/clients/1/factures/
